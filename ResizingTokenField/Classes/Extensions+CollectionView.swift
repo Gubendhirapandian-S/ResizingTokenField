@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  Extensions+CollectionView.swift
 //  ResizingTokenField
 //
 //  Created by Gubendhirapandian on 1/28/21.
@@ -18,8 +18,12 @@ extension UICollectionView {
 		return IndexPath(item: lastItem, section: lastSection)
 	}
 
-	func scrollToBottom(animated: Bool) {
+	func scrollToBottom(animated: Bool, at scrollPosition: UICollectionView.ScrollPosition = .centeredVertically) {
 		guard let lastIndexPath = lastIndexPath else { return }
-		scrollToItem(at: lastIndexPath, at: .bottom, animated: animated)
+		scrollToItem(at: lastIndexPath, at: scrollPosition, animated: animated)
+	}
+
+	func scrollToTop(animated: Bool, scrollPosition: UICollectionView.ScrollPosition = .centeredVertically) {
+		scrollToItem(at: IndexPath(item: 0, section: 0), at: scrollPosition, animated: animated)
 	}
 }

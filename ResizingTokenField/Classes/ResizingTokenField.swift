@@ -241,6 +241,16 @@ open class ResizingTokenField: UIView, UICollectionViewDataSource, UICollectionV
     public func reloadData() {
         collectionView.reloadData()
     }
+
+	/// Use to scroll to the bottom collection view data.
+	public func scrollToBottom(animated: Bool = true) {
+		collectionView.scrollToBottom(animated: animated)
+	}
+
+	/// Use to scroll to the bottom collection view data.
+	public func scrollToTop(animated: Bool = true) {
+		collectionView.scrollToTop(animated: animated)
+	}
     
     // MARK: - First responder
     
